@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import francesavatar from '../public/francesavatar.png';
 import web1 from '../public/web1.png';
@@ -12,7 +12,22 @@ import web5 from '../public/web5.png';
 import web6 from '../public/web6.png';
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme !== null) {
+      setDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    }
+  }, [darkMode, mounted]);
 
   return (
     <div className={darkMode ? 'dark' : ''}>
