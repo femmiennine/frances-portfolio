@@ -1,0 +1,58 @@
+{
+  "memories": [
+    {
+      "id": "mem_1752846918038_1y7kghblq",
+      "content": "User wants to enhance portfolio project cards with: description, link, tech stack, and other project details. Currently just showing images in 2x2 grid layout. Need to design comprehensive project showcase cards.",
+      "type": "general",
+      "tags": [
+        "general",
+        "portfolio",
+        "project-cards",
+        "ui-enhancement"
+      ],
+      "timestamp": "2025-07-18T13:55:18.038Z",
+      "context": "Portfolio enhancement - adding project details beyond just images",
+      "accessCount": 0,
+      "lastAccessed": "2025-07-18T13:55:18.038Z",
+      "lastVerified": "2025-07-18T13:55:18.038Z",
+      "status": "fresh"
+    },
+    {
+      "id": "mem_1752847662139_s7p0fc8if",
+      "content": "User wants to improve the UI of the portfolio cards - they find the current design \"really ugly\". Need to enhance the visual design with better styling, colors, typography, spacing, and overall aesthetic appeal.",
+      "type": "general",
+      "tags": [
+        "general",
+        "portfolio",
+        "ui-improvement",
+        "design",
+        "styling"
+      ],
+      "timestamp": "2025-07-18T14:07:42.139Z",
+      "context": "Portfolio UI improvement - current cards need better visual design",
+      "accessCount": 0,
+      "lastAccessed": "2025-07-18T14:07:42.139Z",
+      "lastVerified": "2025-07-18T14:07:42.139Z",
+      "status": "fresh"
+    },
+    {
+      "id": "mem_1752849397048_zy3lo2r3v",
+      "content": "User wants to add password protection to the Work Portfolio (Scape) with password \"scape1614\" - this is a unique password shared only with recruiters before accessing the Google Drive link.",
+      "type": "general",
+      "tags": [
+        "general",
+        "portfolio",
+        "password-protection",
+        "modal",
+        "security"
+      ],
+      "timestamp": "2025-07-18T14:36:37.047Z",
+      "context": "Adding password protection modal to portfolio",
+      "accessCount": 0,
+      "lastAccessed": "2025-07-18T14:36:37.047Z",
+      "lastVerified": "2025-07-18T14:36:37.047Z",
+      "status": "fresh"
+    }
+  ],
+  "lastUpdated": "2025-07-18T14:36:37.047Z"
+}

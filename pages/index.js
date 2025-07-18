@@ -4,16 +4,17 @@ import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import francesavatar from '../public/francesavatar.png';
-import web1 from '../public/web1.png';
-import web2 from '../public/web2.png';
-import web3 from '../public/web3.png';
-import web4 from '../public/web4.png';
-import web5 from '../public/web5.png';
-import web6 from '../public/web6.png';
+import babyonboardecommerce from '../public/babyonboardecommerce.png';
+import ecommercehublanding from '../public/ecommercehublanding.png';
+import storeaselanding from '../public/storeaselanding.png';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [showUnavailableModal, setShowUnavailableModal] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -28,6 +29,28 @@ export default function Home() {
       localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     }
   }, [darkMode, mounted]);
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (password === 'scape1614') {
+      setShowPasswordModal(false);
+      setPassword('');
+      setPasswordError('');
+      window.open('https://drive.google.com/drive/folders/1Ilar7cFbo7lx6UYfIy0jrt_GBskXxBYQ?usp=drive_link', '_blank');
+    } else {
+      setPasswordError('Incorrect password. Please try again.');
+    }
+  };
+
+  const closeModal = () => {
+    setShowPasswordModal(false);
+    setPassword('');
+    setPasswordError('');
+  };
+
+  const closeUnavailableModal = () => {
+    setShowUnavailableModal(false);
+  };
 
   return (
     <div className={darkMode ? 'dark' : ''}>
@@ -67,7 +90,7 @@ export default function Home() {
         </nav>
         <section className='min-h-screen px-10 md:px-20 lg:px-40 flex items-center justify-center'>
           <div className='text-center max-w-6xl'>
-            <h2 className='text-4xl py-1 text-rose-600 font-medium dark:text-rose-400 md:text-5xl'>
+            <h2 className='text-6xl py-4 font-medium md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-pink-500 to-yellow-400 dark:from-pink-400 dark:to-yellow-300 bg-clip-text text-transparent' style={{ fontFamily: 'Fleur De Leah, cursive' }}>
               Frances Femille Fogarty
             </h2>
             <h3 className='text-xl py-1 dark:text-white md:text-2xl'>
@@ -158,70 +181,232 @@ export default function Home() {
           <div>
             <h3 className='text-3xl py-1 dark:text-white '>Portofolio</h3>
           </div>
-          <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
-            <div className='basis-1/3 flex-1 '>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web1}
-                alt='image 6'
-              />
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-10'>
+            <div className='group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden'>
+              <div className='relative w-full h-64 overflow-hidden rounded-t-2xl -mx-0 bg-gradient-to-br from-rose-400 via-pink-500 to-purple-600 flex items-center justify-center'>
+                <div className='absolute inset-0 bg-gradient-to-tr from-pink-300/20 via-rose-200/30 to-purple-300/20'></div>
+                <div className='absolute top-4 right-4 text-pink-200 text-2xl opacity-60'>✨</div>
+                <div className='absolute bottom-4 left-4 text-rose-200 text-xl opacity-50'>💫</div>
+                <div className='absolute top-8 left-8 text-purple-200 text-lg opacity-40'>🌸</div>
+                <div className='relative z-10 text-white text-center'>
+                  <div className='text-6xl mb-4 bg-gradient-to-r from-white to-pink-100 bg-clip-text text-transparent'>🎨</div>
+                  <div className='text-xl font-bold text-white drop-shadow-lg'>Game UI Development</div>
+                  <div className='text-sm opacity-90 text-pink-50'>Unity UI Components</div>
+                </div>
+                <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+                <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform -skew-x-12'></div>
+              </div>
+              <div className='p-8'>
+                <h4 className='text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-300'>Work Portfolio (Scape)</h4>
+                <p className='text-gray-600 dark:text-gray-300 mb-6 leading-relaxed'>As an Associate Software Engineer at Ringtail Interactive AB, I contributed to the development of Scape, a Unity-based game, with a focus on UI technical design and functionality. I created custom UI Toolkit components such as an adaptive Aspect Ratio Panel, Communal Progress Bar, and a versatile Color Picker, ensuring seamless user experiences across multiple devices.</p>
+                <div className='mb-6'>
+                  <h5 className='text-sm font-semibold text-rose-600 dark:text-rose-400 mb-3 uppercase tracking-wide'>Tech Stack</h5>
+                  <div className='flex flex-wrap gap-2'>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Unity</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Unity UI Toolkit</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>C#</span>
+                  </div>
+                </div>
+                <div className='flex gap-4'>
+                  <button onClick={() => setShowPasswordModal(true)} className='w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    View Portfolio
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className='basis-1/3 flex-1'>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web2}
-                alt='image 3'
-              />
+            <div className='group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden'>
+              <div className='relative w-full h-64 overflow-hidden rounded-t-2xl -mx-0'>
+                <Image
+                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                  src={storeaselanding}
+                  alt='Store A.S.E Landing Page'
+                  fill
+                  sizes='(max-width: 768px) 100vw, 50vw'
+                />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+              </div>
+              <div className='p-8'>
+                <h4 className='text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-300'>Storage Management Solution App</h4>
+                <p className='text-gray-600 dark:text-gray-300 mb-6 leading-relaxed'>This storage management solution allows users to securely upload, organize, and manage personal files in a cloud-based interface. Key features include user authentication, file uploads across various formats, and tools to rename, delete, or download files. Users can generate shareable links for any file and access a &quot;User Share&quot; page to view files shared by others. A dynamic dashboard displays recent activity, storage usage, and provides search and sort functionality for efficient file navigation.</p>
+                <div className='mb-6'>
+                  <h5 className='text-sm font-semibold text-rose-600 dark:text-rose-400 mb-3 uppercase tracking-wide'>Tech Stack</h5>
+                  <div className='flex flex-wrap gap-2'>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>React</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Next.js</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>TypeScript</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Tailwind CSS</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>ShadCN</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Appwrite</span>
+                  </div>
+                </div>
+                <div className='flex gap-4'>
+                  <a href='https://storage-management-solution-murex.vercel.app' target='_blank' rel='noopener noreferrer' className='flex-1 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    Live Demo
+                  </a>
+                  <a href='https://github.com/femmiennine/storage-management-solution' target='_blank' rel='noopener noreferrer' className='flex-1 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-gray-900 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className='basis-1/3 flex-1'>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web3}
-                alt='image 0'
-              />
+            <div className='group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden'>
+              <div className='relative w-full h-64 overflow-hidden rounded-t-2xl -mx-0'>
+                <Image
+                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                  src={ecommercehublanding}
+                  alt='E-commerce Hub Landing Page'
+                  fill
+                  sizes='(max-width: 768px) 100vw, 50vw'
+                />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+              </div>
+              <div className='p-8'>
+                <h4 className='text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-300'>E-Commerce Hub</h4>
+                <p className='text-gray-600 dark:text-gray-300 mb-6 leading-relaxed'>This e-commerce web application enables users to browse products, manage their cart, and securely place orders. It features user authentication, protected routes, and role-based access control, allowing admins to manage products and users through intuitive CRUD interfaces. Users can search, filter, and paginate through listings for a smooth shopping experience. The checkout process includes integrated payment through PayPal, ensuring a secure and convenient transaction flow.</p>
+                <div className='mb-6'>
+                  <h5 className='text-sm font-semibold text-rose-600 dark:text-rose-400 mb-3 uppercase tracking-wide'>Tech Stack</h5>
+                  <div className='flex flex-wrap gap-2'>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>React</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Redux Toolkit</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Bootstrap</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Node.js</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Express.js</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>MongoDB</span>
+                  </div>
+                </div>
+                <div className='flex gap-4'>
+                  <a href='https://ecommerce-hub.onrender.com' target='_blank' rel='noopener noreferrer' className='flex-1 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    Live Demo
+                  </a>
+                  <a href='https://github.com/femmiennine/ecommerce-hub' target='_blank' rel='noopener noreferrer' className='flex-1 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-gray-900 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className='basis-1/3 flex-1'>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web4}
-                alt='image 1'
-              />
+            <div className='group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden'>
+              <div className='relative w-full h-64 overflow-hidden rounded-t-2xl -mx-0'>
+                <Image
+                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                  src={babyonboardecommerce}
+                  alt='Baby on Board E-commerce Website'
+                  fill
+                  sizes='(max-width: 768px) 100vw, 50vw'
+                />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+              </div>
+              <div className='p-8'>
+                <h4 className='text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-300'>Baby on Board E-commerce</h4>
+                <p className='text-gray-600 dark:text-gray-300 mb-6 leading-relaxed'>This full-featured e-commerce platform allows users to register, log in, and shop from a curated list of products. It includes a user dashboard for managing orders and a secure checkout process. Admin users have full control over product listings and customer management through dedicated CRUD interfaces. The platform also supports real-time cart updates, product filtering, and detailed order tracking to enhance the overall user experience.</p>
+                <div className='mb-6'>
+                  <h5 className='text-sm font-semibold text-rose-600 dark:text-rose-400 mb-3 uppercase tracking-wide'>Tech Stack</h5>
+                  <div className='flex flex-wrap gap-2'>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>React</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Redux Toolkit</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>TypeScript</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Styled Components</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Node.js</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>Express.js</span>
+                    <span className='px-3 py-1.5 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow'>MongoDB</span>
+                  </div>
+                </div>
+                <div className='flex gap-4'>
+                  <button onClick={() => setShowUnavailableModal(true)} className='flex-1 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    Live Demo
+                  </button>
+                  <a href='https://github.com/femmiennine/fullstack-ecommerce-app' target='_blank' rel='noopener noreferrer' className='flex-1 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-gray-900 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'>
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className='basis-1/3 flex-1'>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web5}
-                alt='image 2'
-              />
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image
-                className='rounded-lg object-cover'
-                width={'100%'}
-                height={'100%'}
-                layout='responsive'
-                src={web6}
-                alt='image 3'
-              />
+            <div className='flex items-center justify-center'>
+              <div className='bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center'>
+                <div className='text-gray-400 dark:text-gray-500 text-lg font-medium'>Coming Soon</div>
+                <div className='text-gray-300 dark:text-gray-600 text-sm mt-2'>Next Amazing Project</div>
+              </div>
             </div>
           </div>
         </section>
       </main>
+      
+      {/* Password Modal */}
+      {showPasswordModal && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4'>
+          <div className='bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-md w-full relative'>
+            <button onClick={closeModal} className='absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-xl'>
+              ×
+            </button>
+            <div className='text-center mb-6'>
+              <div className='text-4xl mb-4'>🔒</div>
+              <h3 className='text-2xl font-bold text-gray-800 dark:text-white mb-2'>Protected Portfolio</h3>
+              <p className='text-gray-600 dark:text-gray-300'>This portfolio is password-protected. Please enter the password to continue.</p>
+            </div>
+            <form onSubmit={handlePasswordSubmit}>
+              <div className='mb-4'>
+                <input
+                  type='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder='Enter password'
+                  className='w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white'
+                  autoFocus
+                />
+                {passwordError && (
+                  <p className='text-red-500 text-sm mt-2'>{passwordError}</p>
+                )}
+              </div>
+              <div className='flex gap-3'>
+                <button
+                  type='button'
+                  onClick={closeModal}
+                  className='flex-1 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 py-3 px-6 rounded-lg font-medium hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors'
+                >
+                  Cancel
+                </button>
+                <button
+                  type='submit'
+                  className='flex-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl'
+                >
+                  Access Portfolio
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+      
+      {/* Unavailable Demo Modal */}
+      {showUnavailableModal && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4'>
+          <div className='bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-md w-full relative'>
+            <button onClick={closeUnavailableModal} className='absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-xl'>
+              ×
+            </button>
+            <div className='text-center mb-6'>
+              <div className='text-4xl mb-4'>🚧</div>
+              <h3 className='text-2xl font-bold text-gray-800 dark:text-white mb-2'>Demo Unavailable</h3>
+              <p className='text-gray-600 dark:text-gray-300'>Live demo is currently unavailable. To run locally, follow the setup instructions on Github.</p>
+            </div>
+            <div className='flex gap-3'>
+              <button
+                onClick={closeUnavailableModal}
+                className='flex-1 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 py-3 px-6 rounded-lg font-medium hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors'
+              >
+                Close
+              </button>
+              <a
+                href='https://github.com/femmiennine/fullstack-ecommerce-app'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex-1 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-center py-3 px-6 rounded-lg font-medium hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl'
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
