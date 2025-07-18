@@ -6,7 +6,7 @@ import Image from 'next/image';
 import francesavatar from '../public/francesavatar.png';
 import babyonboardecommerce from '../public/babyonboardecommerce.png';
 import ecommercehublanding from '../public/ecommercehublanding.png';
-import storeaselanding from '../public/storeaselanding.png';
+import storeasemyfiles from '../public/storeasemyfiles.png';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -218,7 +218,7 @@ export default function Home() {
               <div className='relative w-full h-64 overflow-hidden rounded-t-2xl -mx-0'>
                 <Image
                   className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
-                  src={storeaselanding}
+                  src={storeasemyfiles}
                   alt='Store A.S.E Landing Page'
                   fill
                   sizes='(max-width: 768px) 100vw, 50vw'

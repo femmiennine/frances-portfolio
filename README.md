@@ -76,7 +76,7 @@ frances-portfolio/
 │   ├── francesavatar.png     # Profile avatar image
 │   ├── babyonboardecommerce.png    # Baby on Board project image
 │   ├── ecommercehublanding.png     # E-Commerce Hub project image
-│   ├── storeaselanding.png         # Storage Management project image
+│   ├── storeasemyfiles.png         # Storage Management project image
 │   ├── CV - Frances...pdf    # Downloadable resume
 │   └── vercel.svg           # Vercel deployment icon
 ├── styles/
