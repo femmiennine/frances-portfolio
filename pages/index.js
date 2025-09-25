@@ -136,7 +136,7 @@ export default function Home() {
                   Frontend
                 </h4>
                 <p className='text-xs text-gray-600 dark:text-gray-300'>
-                  React, Next.js
+                  React, Redux Toolkit, Next.js
                 </p>
                 <p className='text-xs text-gray-600 dark:text-gray-300'>
                   TypeScript, JavaScript
